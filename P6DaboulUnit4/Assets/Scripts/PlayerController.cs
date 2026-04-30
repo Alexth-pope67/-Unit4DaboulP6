@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float explosionForce;
     public float explosionRadius;
     bool smashing = false;
-    float floor;
+    float floorY;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         powerupIndicator.gameObject.SetActive(false);
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PowerUp"))
         {
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && currentPowerUp == PowerUpType.Pushback)
         {
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         var enemies = FindObjectsOfType<Enemy>();
         //Store the y position before taking off
-        floor = transform.position.y;
+        floorY = transform.position.y;
         //Calculate the amount of time we will go up
         float jumpTime = Time.time + hangTime;
         while (Time.time < jumpTime)
@@ -103,9 +103,9 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         //Now move the player down
-        while (transform.position.y > floor)
+        while (transform.position.y > floorY)
         {
-            playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, smashSpeed * 2);
+            playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, -smashSpeed * 2);
             yield return null;
         }
         //Cycle through all enemies.

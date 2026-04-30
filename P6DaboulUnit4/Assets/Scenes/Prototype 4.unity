@@ -593,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349569465}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
@@ -617,10 +617,10 @@ MonoBehaviour:
   powerupIndicator: {fileID: 434003613}
   currentPowerUp: 0
   rocketPrefab: {fileID: 8472310678931296029, guid: e87078a91b917eb419a19b1e9c7413a4, type: 3}
-  hangTime: 1
-  smashSpeed: 32
-  explosionForce: 2
-  explosionRadius: 2
+  hangTime: 0.5
+  smashSpeed: 6
+  explosionForce: 10
+  explosionRadius: 10
 --- !u!1001 &1403545340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559410e1da458b8468f47c46974e8736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 125
+  rotationSpeed: 150
 --- !u!4 &1612865797
 Transform:
   m_ObjectHideFlags: 0
@@ -918,11 +918,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5831814716121893815, guid: 363a8f737719f4d2eafb35f885f3706f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5831814716121893815, guid: 363a8f737719f4d2eafb35f885f3706f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5831814716121893815, guid: 363a8f737719f4d2eafb35f885f3706f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -951,9 +951,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1211016357}
   - {fileID: 245963551}
-  - {fileID: 7305732181041295649}
   - {fileID: 1403545340}
-  - {fileID: 1349569470}
+  - {fileID: 7305732181041295649}
   - {fileID: 1612865797}
   - {fileID: 1743343268}
   - {fileID: 109300464264695778}
+  - {fileID: 1349569470}
